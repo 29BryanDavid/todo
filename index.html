@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container my-5">
+        <h1 class="text-center mb-4">To-Do List</h1>
+        <div class="input-group mb-3">
+            <input type="text" id="task" class="form-control" placeholder="Task">
+            <input type="text" id="time" class="form-control" placeholder="Time to complete (hh:mm:ss)">
+            <input type="text" id="category" class="form-control" placeholder="Category (home, office, personal)">
+            <div class="input-group-append">
+                <button class="btn btn-primary" onclick="addTask()">Add Task</button>
+            </div>
+        </div>
+
+        <h2>Tasks</h2>
+        <ul class="list-group mb-4" id="task-list"></ul>
+
+        <h2>Suggestions</h2>
+        <div class="input-group mb-3">
+            <input type="number" id="available-time" class="form-control" placeholder="Available time (minutes)">
+            <div class="input-group-append">
+                <button class="btn btn-success" onclick="allocateTime()">Allocate Time</button>
+                <button class="btn btn-info ml-2" onclick="suggestTasks()">Suggest Tasks</button>
+                <button class="btn btn-secondary ml-2" onclick="downloadSchedule()">Download Schedule</button>
+            </div>
+        </div>
+        <ul class="list-group" id="suggestions-list"></ul>
+
+        <button class="btn btn-primary mt-3" onclick="startListening()">Start Voice Input</button>
+        <div id="timer-display" class="text-center my-3">00:00</div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
